@@ -24,10 +24,14 @@ describe("firestore", () => {
       );
     });
      it("Lets get data", () => {
-    var citiesRef = db.collection("users");
-
-    var query = citiesRef.where("device", "!=", "");
-    document.write(query);
+   db.collection("users").where("device", "==", "Scott's Phone")
+    .onSnapshot(function(querySnapshot) {
+        var peeps = [];
+        querySnapshot.forEach(function(doc) {
+            peeps.push(doc.data().name);
+        });
+        document.write("Current activity: ", peeps.join(", "));
+    });
          });
 });
 
