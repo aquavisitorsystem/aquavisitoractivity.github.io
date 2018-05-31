@@ -26,9 +26,9 @@ describe("firestore", () => {
      it("Lets get data", () => {
    db.collection("users").orderBy("date", "desc")
     .onSnapshot(function(querySnapshot) {
-       document.getElementById("message").innerHTML = "";
         var peeps = [];
         querySnapshot.forEach(function(doc) {
+             document.getElementById("message").innerHTML = "";
             peeps.push("<br>" + doc.data().device + "," + doc.data().date + "," + doc.data().visited);
         });
         document.getElementById("message").innerHTML = "Current activity: ", peeps.join(", ");
