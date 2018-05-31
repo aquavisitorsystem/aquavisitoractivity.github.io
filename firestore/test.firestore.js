@@ -2,9 +2,9 @@ describe("firestore", () => {
     var db;
     before(() => {
         var config = {
-            apiKey: "AIzaSyCM61mMr_iZnP1DzjT1PMB5vDGxfyWNM64",
-            authDomain: "firestore-snippets.firebaseapp.com",
-            projectId: "firestore-snippets"
+            apiKey: "AIzaSyBu4FaHCylofeNVO5gHkyS4IYFcYZLOiA4",
+            authDomain: "aquaguide2018.firebaseio.com",
+            projectId: "aquaguide2018"
         };
         var app = firebase.initializeApp(config);
         db = firebase.firestore(app);
