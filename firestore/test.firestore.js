@@ -26,11 +26,12 @@ describe("firestore", () => {
      it("Lets get data", () => {
    db.collection("users").orderBy("date", "desc")
     .onSnapshot(function(querySnapshot) {
+       document.getElementById("message").innerHTML = "";
         var peeps = [];
         querySnapshot.forEach(function(doc) {
             peeps.push("<br>" + doc.data().device + "," + doc.data().date + "," + doc.data().visited);
         });
-        document.write("Current activity: ", peeps.join(", "));
+        document.getElementById("message").innerHTML = "Current activity: ", peeps.join(", ");
     });
          });
 });
