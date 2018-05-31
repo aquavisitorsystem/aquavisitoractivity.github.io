@@ -24,38 +24,11 @@ describe("firestore", () => {
       );
     });
 
-    
-
-
-        it("should get all users", () => {
-            return output =
-            // [START get_all_users]
-            db.collection("users").get().then((querySnapshot) => {
-                .orderBy("date")
-                querySnapshot.forEach((doc) => {
-                    console.log(`${doc.id} => ${doc.data()}`);
-                });
-            });
-            // [END get_all_users]
-        });
-
-        
-        it("should loop through a watched collection", (done) => {
-            // This is not a typo.
-            var unsubscribe =
-
-            // [START listen_for_users]
-            db.collection("users")
-                .onSnapshot(function(snapshot) {
-                    snapshot.forEach(function (userSnapshot) {
-                        console.log(userSnapshot.data())
-                    });
-                });
-            // [END listen_for_users]
-
-            setTimeout(() => {
-                unsubscribe();
-                done();
-            }, 1500);
-        });
+db.collection("users").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+    });
 });
+
+
