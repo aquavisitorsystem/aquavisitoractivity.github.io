@@ -30,5 +30,5 @@ db.collection("users").get().then(function(querySnapshot) {
         console.log(doc.id, " => ", doc.data());
     });
 });
-
+});
 
