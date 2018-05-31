@@ -31,7 +31,7 @@ db.collection("users").get().then(function(querySnapshot) {
         document.write(doc.date);
         document.write(doc.device);
         document.write(doc.visit);
-         document.write("<br">;
+         document.write("<br">);
     });
 });
          });
