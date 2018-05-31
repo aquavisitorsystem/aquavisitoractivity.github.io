@@ -1,4 +1,4 @@
-describe("firestore", () => {
+describe("aquaguide activity", () => {
     var db;
     before(() => {
         var config = {
@@ -11,7 +11,7 @@ describe("firestore", () => {
         //firebase.firestore.setLogLevel("debug");
     });
 
-    it("should be initializable with persistence", () => {
+    it("initialize database", () => {
       // [START initialize_persistence]
       firebase.initializeApp({
          apiKey: "AIzaSyBu4FaHCylofeNVO5gHkyS4IYFcYZLOiA4",
@@ -23,7 +23,7 @@ describe("firestore", () => {
       // [END_EXCLUDE]
       );
     });
-     it("Lets get data", () => {
+     it("active listening turned on", () => {
    db.collection("users").orderBy("date", "desc")
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
