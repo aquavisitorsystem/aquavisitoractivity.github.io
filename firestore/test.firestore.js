@@ -24,7 +24,7 @@ describe("firestore", () => {
       );
     });
      it("Lets get data", () => {
-   db.collection("users").where("device", "==", "Scott's Phone")
+   db.collection("users")
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
         querySnapshot.forEach(function(doc) {
