@@ -14,9 +14,9 @@ describe("firestore", () => {
     it("should be initializable with persistence", () => {
       // [START initialize_persistence]
       firebase.initializeApp({
-        apiKey: '### FIREBASE API KEY ###',
-        authDomain: '### FIREBASE AUTH DOMAIN ###',
-        projectId: '### CLOUD FIRESTORE PROJECT ID ###',
+         apiKey: "AIzaSyBu4FaHCylofeNVO5gHkyS4IYFcYZLOiA4",
+            authDomain: "aquaguide2018.firebaseio.com",
+            projectId: "aquaguide2018",
       }
       // [START_EXCLUDE silent]
       ,"persisted_app"
