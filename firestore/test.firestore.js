@@ -23,10 +23,11 @@ describe("firestore", () => {
       // [END_EXCLUDE]
       );
     });
-
+     it("Lets get data", () => {
     var citiesRef = db.collection("users");
 
     var query = citiesRef.where("device", "!=", "");
     document.write(query);
+         });
 });
 
