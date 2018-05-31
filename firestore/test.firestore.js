@@ -26,6 +26,7 @@ describe("firestore", () => {
      it("Lets get data", () => {
    db.collection("users")
     .onSnapshot(function(querySnapshot) {
+        .orderBy("date", "desc");
         var peeps = [];
         querySnapshot.forEach(function(doc) {
             peeps.push("<br>" + doc.data().device + "," + doc.data().date + "," + doc.data().visited);
