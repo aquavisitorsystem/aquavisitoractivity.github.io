@@ -31,7 +31,7 @@ describe("aquaguide activity", () => {
             var mydate = new Date(doc.data().date);
             peeps.push("<br>" + doc.data().device + ", " + mydate.toLocaleString() + ", " + doc.data().visited);
         });
-        document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(",<br>");
+        document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join("| ");
        
     });
          });
