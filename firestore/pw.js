@@ -5,7 +5,7 @@ while (testV < 3) {
 if (!pass1) 
 history.go(-1);
 if (pass1.toLowerCase() == "aqua777") {
-window.open('index2.html');
+window.open('index.html');
 break;
 } 
 testV+=1;
