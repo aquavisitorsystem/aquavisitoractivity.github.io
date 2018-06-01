@@ -15,7 +15,15 @@ div {
 </head>
 <body>
   <div id="mocha"></div>
-  <div id="message"></div>
+  <div class="jumbotron">
+  <h1 class="display-3">app activity</h1>
+  <p class="lead">This is an live log of user activity.</p>
+  <hr class="my-4">
+  <p>Data collected: Phone name, time stamp of visit, menu item visited.</p>
+  <p class="lead">
+     <div id="message"></div>
+  </p>
+</div>
   <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
   <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
   <script>mocha.setup('bdd')</script>
