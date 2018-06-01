@@ -28,7 +28,8 @@ describe("aquaguide activity", () => {
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
         querySnapshot.forEach(function(doc) {
-            peeps.push("<br>" + doc.data().device + ", " + doc.data().date + ", " + doc.data().visited);
+            var mydate = new Date(doc.data().date);
+            peeps.push("<br>" + doc.data().device + ", " + mydate.toLocaleString() + ", " + doc.data().visited);
         });
         document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(",<br>");
        
