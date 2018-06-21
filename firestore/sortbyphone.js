@@ -23,7 +23,7 @@ describe("aquaguide activity", () => {
       // [END_EXCLUDE]
       );
     });
-     it("active listening turned on", () => {
+     it("sorting by phonename asc and date desc", () => {
    db.collection("users").orderBy("device", "asc").orderBy("date", "desc")
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
