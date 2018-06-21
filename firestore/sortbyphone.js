@@ -24,7 +24,7 @@ describe("aquaguide activity", () => {
       );
     });
      it("sorting by phonename asc and date desc", () => {
-   db.collection("users").orderBy("device")
+   db.collection("users").orderBy("device").orderBy("date", "desc")
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
         querySnapshot.forEach(function(doc) {
@@ -32,7 +32,6 @@ describe("aquaguide activity", () => {
             peeps.push("<br>" + doc.data().device + ", " + mydate.toLocaleString() + ", " + doc.data().visited);
         });
         document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(" ");
-       
     });
          });
 });
