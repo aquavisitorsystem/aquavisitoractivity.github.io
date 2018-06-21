@@ -24,7 +24,7 @@ describe("aquaguide activity", () => {
       );
     });
      it("sorting by phonename asc and date desc", () => {
-   db.collection("users").orderByChild("device")
+   db.collection("users").orderBy("device")
        .limitToFirst(1)
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
