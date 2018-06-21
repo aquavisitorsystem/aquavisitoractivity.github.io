@@ -24,7 +24,7 @@ describe("aquaguide activity", () => {
       );
     });
      it("active listening turned on", () => {
-   db.collection("users").orderBy("device", "asc").limit(1)
+   db.collection("users").orderBy("device", "asc").orderBy("date", "desc")
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
         querySnapshot.forEach(function(doc) {
