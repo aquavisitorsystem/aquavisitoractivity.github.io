@@ -1,10 +1,10 @@
-describe("aquaguide activity", () => {
+describe("aquavisitorapp activity", () => {
     var db;
     before(() => {
         var config = {
-            apiKey: "AIzaSyBu4FaHCylofeNVO5gHkyS4IYFcYZLOiA4",
-            authDomain: "aquaguide2018.firebaseio.com",
-            projectId: "aquaguide2018"
+            apiKey: "AIzaSyC_Wl1RgIWazRk3OhodD5QQTykOcIyZMNs",
+            authDomain: "aquacheckin-e0b0b.firebaseapp.com",
+            projectId: "aquacheckin-e0b0b"
         };
         var app = firebase.initializeApp(config);
         db = firebase.firestore(app);
@@ -14,9 +14,9 @@ describe("aquaguide activity", () => {
     it("initialize database", () => {
       // [START initialize_persistence]
       firebase.initializeApp({
-         apiKey: "AIzaSyBu4FaHCylofeNVO5gHkyS4IYFcYZLOiA4",
-            authDomain: "aquaguide2018.firebaseio.com",
-            projectId: "aquaguide2018",
+            apiKey: "AIzaSyC_Wl1RgIWazRk3OhodD5QQTykOcIyZMNs",
+            authDomain: "aquacheckin-e0b0b.firebaseapp.com",
+            projectId: "aquacheckin-e0b0b"
       }
       // [START_EXCLUDE silent]
       ,"persisted_app"
@@ -24,12 +24,12 @@ describe("aquaguide activity", () => {
       );
     });
      it("active listening turned on", () => {
-   db.collection("users").orderBy("date", "desc")
+   db.collection("log").orderBy("date", "desc")
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
         querySnapshot.forEach(function(doc) {
             var mydate = new Date(doc.data().date);
-            peeps.push("<br>" + doc.data().device + ", " + mydate.toLocaleString() + ", " + doc.data().visited);
+            peeps.push("<br>" + "date: " + mydate.toLocaleString() + ", LName:" + doc.data().lastname + ", FName:" + doc.data().firstname + ", Date/Time:" + mydate.toLocaleString() + ", checkin:" + doc.data().checkin + ", checkout:" + doc.data().checkout);
         });
         document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(" ");
        
