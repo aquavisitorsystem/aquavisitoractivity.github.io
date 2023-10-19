@@ -1,4 +1,4 @@
-describe("aquavisitorapp activity", () => {
+describe("Aqua Visitor Management System activity", () => {
     var db;
     before(() => {
         var config = {
