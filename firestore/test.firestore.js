@@ -34,13 +34,13 @@ describe("Aqua Visitor Management System - Activity Log", () => {
             
             if (checkin.length === 0) {
   checkin = "";
-                else {
+            }else {
  checkin = "Checkin: " + doc.data().checkin + ";
             }
 }
             if (checkout.length === 0) {
    checkout = "";
-                          else {
+        }else {
  checkin = "Checkout: " + doc.data().checkout + ";
             }
 }
