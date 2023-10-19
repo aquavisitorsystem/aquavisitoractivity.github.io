@@ -29,8 +29,8 @@ describe("Aqua Visitor Management System - Activity Log", () => {
         var peeps = [];
         querySnapshot.forEach(function(doc) {
             var mydate = new Date(doc.data().date);
-             var checkin = new Date(doc.data().checkin);
-             var checkout = new Date(doc.data().checkout);
+             var checkin = doc.data().checkin;
+             var checkout = doc.data().checkout;
             
             if (checkin.length === 0) {
   checkin = "";
