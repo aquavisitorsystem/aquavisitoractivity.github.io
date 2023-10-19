@@ -44,7 +44,7 @@ describe("Aqua Visitor Management System - Activity Log", () => {
  checkout = "Checkout: " + doc.data().checkout;
             }
 
-            peeps.push("<br>" + mydate.toLocaleString() + ", Visiting: " + doc.data().message + ", Visitor: " + doc.data().firstname + " " + doc.data().lastname + ", Company: " + doc.data().company + "," + checkin + ", " + checkout);
+            peeps.push("<br>" + mydate.toLocaleString() + ", Visiting: " + doc.data().message + ", Visitor: " + doc.data().firstname + " " + doc.data().lastname + ", Company: " + doc.data().company + ", " + checkin + ", " + checkout);
         });
         document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(" ");
        
