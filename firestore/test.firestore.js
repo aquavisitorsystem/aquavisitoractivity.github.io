@@ -29,7 +29,7 @@ describe("aquavisitorapp activity", () => {
         var peeps = [];
         querySnapshot.forEach(function(doc) {
             var mydate = new Date(doc.data().date);
-            peeps.push("<br>" + mydate.toLocaleString() + ", LName: " + doc.data().lastname + ", FName: " + doc.data().firstname + ", Date/Time: " + ", Checkin: " + doc.data().checkin + ", Checkout: " + doc.data().checkout);
+            peeps.push("<br>" + mydate.toLocaleString() + ", LName: " + doc.data().lastname + ", FName: " + doc.data().firstname + ", Visiting: " + doc.data().message + ", Checkin: " + doc.data().checkin + ", Checkout: " + doc.data().checkout);
         });
         document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(" ");
        
