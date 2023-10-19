@@ -41,6 +41,7 @@ describe("Aqua Visitor Management System - Activity Log", () => {
             if (checkout.length === 0) {
    checkout = "";
         }else {
+  checkin = "";              
  checkout = ", Checkout: " + doc.data().checkout;
             }
 
