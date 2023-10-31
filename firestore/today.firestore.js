@@ -1,5 +1,5 @@
-const today = (new Date()).setHours(0,0,0,0);
 describe("Aqua Visitor Management System - Activity Log", () => {
+    const today = (new Date()).setHours(0,0,0,0);
     var db;
     before(() => {
         var config = {
