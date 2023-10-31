@@ -25,7 +25,7 @@ describe("Aqua Visitor Management System - Activity Log", () => {
       );
     });
      it("active listening turned on", () => {
-   db.collection("log").where('timestamp', '>', today).orderBy("timestamp", "desc")
+   db.collection("log").where("timestamp", ">", today).orderBy("timestamp", "desc")
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
         querySnapshot.forEach(function(doc) {
