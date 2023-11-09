@@ -52,7 +52,7 @@ describe("Aqua Visitor Management System - Activity Log", () => {
         });
         console.log(peeps.length);
         if (peeps.length === 0){
-            document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + "There are no check-in/check-out logs for today.";
+            document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + "There are no check-in/check-out logs for today so far!";
         }else{
             document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(" ");
         }
