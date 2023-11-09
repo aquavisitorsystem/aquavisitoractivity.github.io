@@ -50,9 +50,47 @@ describe("Aqua Visitor Management System - Activity Log", () => {
             //text.substring(0, 15);
             peeps.push("<br>" + mydate.toLocaleString() + checkin + checkout + ", " + doc.data().firstname + " " + doc.data().lastname  + ", " + doc.data().company + ", Visiting: " + doc.data().message);
         });
-        document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(" ");
+        console.log(peeps.length);
+        if (peeps.length === 0){
+            document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + "There are no check-in/check-out logs for today.";
+        }else{
+            document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(" ");
+        }
+         setInterval(function(){
+            currentTime = getDateTime();
+            document.getElementById("leads").innerHTML = "Current activity: " +  "<br>" + "VMS live activity log: " + getDateTime();
+        }, 1000);
+        
        
     });
          });
 });
+
+     function getDateTime() {
+         var now     = new Date(); 
+         var year    = now.getFullYear();
+         var month   = now.getMonth()+1; 
+         var day     = now.getDate();
+         var hour    = now.getHours();
+         var minute  = now.getMinutes();
+         var second  = now.getSeconds(); 
+         if(month.toString().length == 1) {
+             month = '0'+month;
+         }
+         if(day.toString().length == 1) {
+             day = '0'+day;
+         }   
+         if(hour.toString().length == 1) {
+             hour = '0'+hour;
+         }
+         if(minute.toString().length == 1) {
+             minute = '0'+minute;
+         }
+         if(second.toString().length == 1) {
+             second = '0'+second;
+         }   
+         var dateTime = month+'/'+day+'/'+year+', '+hour+':'+minute+':'+second;   
+         return dateTime;
+     }
+
 

@@ -27,6 +27,7 @@ describe("Aqua Visitor Management System - Activity Log", () => {
    db.collection("log").orderBy("date", "desc")
     .onSnapshot(function(querySnapshot) {
         var peeps = [];
+        var dt = [];
         querySnapshot.forEach(function(doc) {
             var mydate = new Date(doc.data().date);
              var checkin = doc.data().checkin;
@@ -47,11 +48,43 @@ describe("Aqua Visitor Management System - Activity Log", () => {
                 checkout = ", Checkout";// + doc.data().checkout;
             }
             //text.substring(0, 15);
+            dt.push(mydate.toLocaleString());
             peeps.push("<br>" + mydate.toLocaleString() + checkin + checkout + ", " + doc.data().firstname + " " + doc.data().lastname  + ", " + doc.data().company + ", Visiting: " + doc.data().message);
         });
+        console.log(peeps.length);
         document.getElementById("message").innerHTML = "Current activity: " +  "<br>" + peeps.join(" ");
+        setInterval(function(){
+            currentTime = getDateTime();
+            document.getElementById("leads").innerHTML = "Current activity: " +  "<br>" + "VMS live activity log from " + dt[0] + " through " + getDateTime();
+        }, 1000);
        
     });
          });
 });
 
+     function getDateTime() {
+         var now     = new Date(); 
+         var year    = now.getFullYear();
+         var month   = now.getMonth()+1; 
+         var day     = now.getDate();
+         var hour    = now.getHours();
+         var minute  = now.getMinutes();
+         var second  = now.getSeconds(); 
+         if(month.toString().length == 1) {
+             month = '0'+month;
+         }
+         if(day.toString().length == 1) {
+             day = '0'+day;
+         }   
+         if(hour.toString().length == 1) {
+             hour = '0'+hour;
+         }
+         if(minute.toString().length == 1) {
+             minute = '0'+minute;
+         }
+         if(second.toString().length == 1) {
+             second = '0'+second;
+         }   
+         var dateTime = month+'/'+day+'/'+year+', '+hour+':'+minute+':'+second;   
+         return dateTime;
+     }
