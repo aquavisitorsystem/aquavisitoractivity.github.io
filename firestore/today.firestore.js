@@ -58,7 +58,7 @@ describe("Aqua Visitor Management System - Activity Log", () => {
         }
          setInterval(function(){
             currentTime = getDateTime();
-            document.getElementById("leads").innerHTML = "Current activity: " +  "<br>" + "VMS live activity log: " + getDateTime();
+            document.getElementById("leads").innerHTML = "Current activity: " +  "<br>" + "VMS live activity log: " + getDateTime() ;
         }, 1000);
         
        
@@ -67,6 +67,15 @@ describe("Aqua Visitor Management System - Activity Log", () => {
 });
 
      function getDateTime() {
+         var options = {
+             month: 'numeric',
+             day: 'numeric',
+             year: 'numeric',
+             hour: 'numeric',
+             minute: 'numeric',
+             second: 'numeric',
+             hour12: true
+         };
          var now     = new Date(); 
          var year    = now.getFullYear();
          var month   = now.getMonth()+1; 
@@ -89,7 +98,11 @@ describe("Aqua Visitor Management System - Activity Log", () => {
          if(second.toString().length == 1) {
              second = '0'+second;
          }   
-         var dateTime = month+'/'+day+'/'+year+', '+hour+':'+minute+':'+second;   
+         var ampm = (hour >= 12) ? "PM" : "AM";
+         var dateTime = month+'/'+day+'/'+year+', '+hour+':'+minute+':'+second+ ' ' + ampm;  
+         var dateTime2 = month+'/'+day+'/'+year+', '+hour+':'+minute+':'+second
+         var formatteddate = new Date(dateTime2).toLocaleString('en-US', options);
+         dateTime = formatteddate;
          return dateTime;
      }
 
